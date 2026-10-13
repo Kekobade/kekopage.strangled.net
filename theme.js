@@ -1,73 +1,115 @@
-// ---------- Theme toggle: a circle of the new theme grows out from the button ----------
-const root = document.documentElement;
-const toggleBtn = document.querySelector('.theme-toggle');
-const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* Keko's Home - Windows 98 behaviour: theme, minimize/maximize/close, Start menu, clock */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var $ = function (id) { return document.getElementById(id); };
 
-function setTheme(t) {
-  root.dataset.theme = t;
-  localStorage.setItem('theme', t);
-}
+  var win = $('win'), task = $('task'), icon = $('desktop-icon'),
+      btnMin = $('btn-min'), btnMax = $('btn-max'), btnClose = $('btn-close'),
+      start = $('start'), menu = $('startmenu'),
+      clock = $('clock'), off = $('shutdown-screen');
 
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
-
-    if (!document.startViewTransition || reduceMotion) {
-      setTheme(next);
-      return;
-    }
-
-    const r = toggleBtn.getBoundingClientRect();
-    const x = r.left + r.width / 2;
-    const y = r.top + r.height / 2;
-    const radius = Math.hypot(
-      Math.max(x, innerWidth - x),
-      Math.max(y, innerHeight - y)
-    );
-
-    const transition = document.startViewTransition(() => setTheme(next));
-    transition.ready.then(() => {
-      root.animate(
-        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
-        { duration: 700, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' }
-      );
+  /* ---------- theme ---------- */
+  function currentTheme() { return root.dataset.theme === 'light' ? 'light' : 'dark'; }
+  function paintTheme() {
+    var next = currentTheme() === 'dark' ? 'Light' : 'Dark';
+    document.querySelectorAll('[data-theme-toggle] .tlabel').forEach(function (el) {
+      el.textContent = next + ' mode';
+    });
+  }
+  function setTheme(t) {
+    root.dataset.theme = t;
+    try { localStorage.setItem('theme', t); } catch (e) {}
+    paintTheme();
+  }
+  document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      setTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+      closeMenu();
     });
   });
-}
+  paintTheme();
 
-// ---------- Star background (hidden automatically in light mode by the CSS) ----------
-const starsContainer = document.getElementById('stars');
-const STAR_COUNT = 90;
-if (starsContainer) {
-  for (let i = 0; i < STAR_COUNT; i++) {
-    const s = document.createElement('div');
-    s.className = 'star';
-    const size = Math.random() * 2 + 1;
-    s.style.width = size + 'px';
-    s.style.height = size + 'px';
-    s.style.top = Math.random() * 100 + '%';
-    s.style.left = Math.random() * 100 + '%';
-    s.style.animationDelay = (Math.random() * 3) + 's';
-    s.style.animationDuration = (2 + Math.random() * 3) + 's';
-    starsContainer.appendChild(s);
+  /* ---------- window: minimize / maximize / close ---------- */
+  function minimize() {
+    win.classList.add('is-hidden');
+    task.classList.remove('active');
   }
-}
-
-// ---------- Active-section highlight in the nav (safe even while the nav is commented out) ----------
-const sections = document.querySelectorAll('section.category');
-const navLinks = document.querySelectorAll('nav.index a');
-const map = {};
-navLinks.forEach(l => map[l.getAttribute('href').slice(1)] = l);
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const link = map[entry.target.id];
-    if (!link) return;
-    if (entry.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-    }
+  function restore() {
+    win.classList.remove('is-hidden');
+    task.hidden = false;
+    task.classList.add('active');
+    icon.hidden = true;
+  }
+  function closeWin() {
+    minimize();
+    task.hidden = true;
+    icon.hidden = false;
+  }
+  function toggleMax() {
+    var m = win.classList.toggle('max');
+    btnMax.innerHTML = m ? '&#10064;' : '&#9633;';
+    btnMax.title = m ? 'Restore' : 'Maximize';
+  }
+  btnMin.addEventListener('click', minimize);
+  btnMax.addEventListener('click', toggleMax);
+  btnClose.addEventListener('click', closeWin);
+  $('titlebar').addEventListener('dblclick', function (e) {
+    if (!e.target.closest('.tbtns')) toggleMax();
   });
-}, { rootMargin: '-10% 0px -70% 0px', threshold: 0 });
+  task.addEventListener('click', function () {
+    if (win.classList.contains('is-hidden')) restore(); else minimize();
+    closeMenu();
+  });
+  icon.addEventListener('click', restore);
 
-sections.forEach(s => observer.observe(s));
+  /* ---------- Start menu ---------- */
+  function openMenu() {
+    menu.hidden = false;
+    start.classList.add('pressed');
+    start.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    menu.hidden = true;
+    start.classList.remove('pressed');
+    start.setAttribute('aria-expanded', 'false');
+  }
+  start.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (menu.hidden) openMenu(); else closeMenu();
+  });
+  document.addEventListener('click', function (e) {
+    if (!menu.hidden && !menu.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // jump links: bring the window back first, then scroll to the section
+  document.querySelectorAll('[data-jump]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      closeMenu();
+      restore();
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ block: 'start' });
+    });
+  });
+
+  /* ---------- shut down ---------- */
+  $('shutdown').addEventListener('click', function () {
+    closeMenu();
+    off.hidden = false;
+    off.focus();
+  });
+  function wake() { off.hidden = true; }
+  off.addEventListener('click', wake);
+  off.addEventListener('keydown', wake);
+
+  /* ---------- clock ---------- */
+  function tick() {
+    clock.textContent = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  }
+  tick();
+  setInterval(tick, 15000);
+})();
