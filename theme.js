@@ -9,7 +9,7 @@ if (!gl) {
   const err = document.getElementById('err');
   if (err) err.hidden = false;
 } else {
-  // 1. WebGL Setup
+  // 1. WebGL Setup 
   const VS = `#version 300 es
   void main(){ vec2 p = vec2((gl_VertexID<<1)&2, gl_VertexID&2); gl_Position = vec4(p*2.-1., 0, 1); }`;
 
