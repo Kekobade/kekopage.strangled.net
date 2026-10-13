@@ -1,330 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>✧ Keko's Home ✧</title>
-
-  <link rel="stylesheet" href="style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&#10023; Keko's Home &#10023;</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono&display=swap" rel="stylesheet">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div id="stars"></div>
-
-
+<canvas id="c"></canvas>
 <header>
-  <div class="kicker-row">
-    <div class="kicker">// Keko's personal — bookmarks &amp; backups</div>
-  </div>
-  <h1>Welcome, My Friend...</h1>
-  <p class="sub">This is Keko's website — personal stuff to share, plus bookmarks. Every link opens in a new tab.</p>
-  <p class="note"><i>"more to come <del>soon</del>..."</i></p>
+  <a class="brand" href="#">&#10023; KEKO'S HOME &#10023;</a>
+  <nav>
+    <!-- FPS -->
+    <div id="fps-meter" role="button" tabindex="0" title="Click or press L to turn the animation on/off">
+      <div class="fps-header">
+        <span id="fps-val">-- FPS</span>
+        <span id="fps-status">LIVE</span>
+      </div>
+      <div class="fps-track">
+        <div id="fps-fill"></div>
+      </div>
+    </div>
+    <button id="theme" type="button" aria-label="Toggle light/dark theme">&#9681;</button>
+  </nav>
 </header>
 
-<!-- Scripts -->
+<main>
+<section class="card hero">
+  <div class="kicker">// Keko's personal &mdash; bookmarks &amp; backups</div>
+  <h1>Welcome, My Friend...</h1>
+  <p>This is Keko's website &mdash; personal stuff to share, plus bookmarks. Every link opens in a new tab.</p>
+  <p>(Vibe-Coded Website But also Analysed/Changes Made by ek9no/Kekobade)</p>
+  <p>if you don't Like to add Shaders, you can go to my Backup Page of <a href="https://kekobade.github.io/kekopage/"l target="_blank" rel="noopener noreferrer">&#10023; <u>Keko's original page</u> &#10023;</a>.</p>
+  <blockquote><b>BE SURE TO PRESS THE "L" BUTTON (OR TAP THE FPS BOX) IF ANY LAG CONCERNS</b></blockquote>
+  <br>
+  <p class="note"><i>"more to come <del>soon</del>..."</i></p>
+</section>
+
+<!-- Scripts (Android Disability Deeadline) -->
 <script src="https://keepandroidopen.org/banner.js?link=https://keepandroidopen.org/&size=minimal&hidebutton=off"></script>
 <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')</script>
-<script src="theme.js" defer></script> 
-<div class="wrap">
-  <main>
-
-    <!-- PEOPLE & COMMUNITY -->
-    <section class="category" id="people">
-      <div class="cat-head">
-        <h2>✧ People &amp; Community</h2>
-        <span class="cat-count">People Worth Following</span>
-      </div>
-            <div class="grid">
-        <a class="card" href="https://daniel.micay.dev/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=daniel.micay.dev" alt="" loading="lazy" onerror="this.style.display='none'">Daniel Micay <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Security researcher, founder of GrapheneOS</div>
-        </a>
-        <a class="card" href="https://ni5arga.com" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=x.com" alt="" loading="lazy" onerror="this.style.display='none'">ni5agrga <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Software engineer, hacker, security researcher</div>
-        </a>
-        <a class="card" href="https://xn--gckvb8fzb.com/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=xn--gckvb8fzb.com" alt="" loading="lazy" onerror="this.style.display='none'">マリウス <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Well-known journalist</div>
-        </a>
-        <a class="card" href="https://yearofthelinuxdesktop.net/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=yearofthelinuxdesktop.net" alt="" loading="lazy" onerror="this.style.display='none'">Year Of Linux Desktop <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Comprehensive GNU/Linux overview for beginners</div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Wiki And Guides -->
-    <section class="category" id="Wiki">
-      <div class="cat-head">
-        <h2>✧ Wiki &amp; Guides</h2>
-        <span class="cat-count">Useful Resources To Find</span>
-      </div>
-      <div class="grid">
-               <a class="card" href="https://www.wikipedia.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=wikipedia.org" alt="" loading="lazy" onerror="this.style.display='none'">Wikipedia <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Everything what you need to know!</div>
-        </a>      
-        <a class="card" href="https://fmhy.xyz/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=fmhy.xyz" alt="" loading="lazy" onerror="this.style.display='none'">FMHY <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Community-maintained megawiki</div>
-          </a>
-        <a class="card" href="https://wispydocs.pages.dev/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=wispydocs.pages.dev" alt="" loading="lazy" onerror="this.style.display='none'">Wispy Docs <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Simple guides</div>
-        </a>
-        <a class="card" href="https://eylenburg.github.io/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=eylenburg.github.io" alt="" loading="lazy" onerror="this.style.display='none'">Eylenburg <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Tech website</div>
-        </a>
-        <a class="card" href="https://anonymousplanet.net/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=anonymousplanet.net" alt="" loading="lazy" onerror="this.style.display='none'">The Hitchhiker's Guide <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Privacy and anonymity guide</div>
-        </a>
-       <a class="card" href="https://guardianproject.info/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=guardianproject.info" alt="" loading="lazy" onerror="this.style.display='none'">Guardian Project <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Privacy-focused apps for Android</div>
-        </a>
-       <a class="card" href="https://www.privacytools.io/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=privacytools.io" alt="" loading="lazy" onerror="this.style.display='none'">PrivacyTools.io <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Privacy-focused resources and tools</div>
-        </a>
-       <a class="card" href="https://awesome-privacy.xyz/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=awesome-privacy.xyz" alt="" loading="lazy" onerror="this.style.display='none'">Awesome Privacy <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Privacy-focused resources and tools</div>
-        </a>
-      </div>
-    </section>
 
 
-        <!-- Websites I like-->
-    <section class="category" id="websites">
-      <div class="cat-head">
-        <h2>✧ Websites I Like</h2>
-        <span class="cat-count">Cool Websites</span>
-      </div>
-      <div class="grid">
-       <a class="card" href="https://wencesbyte.net/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=wencesbyte.net" alt="" loading="lazy" onerror="this.style.display='none'">Wencesbyte <span class="arrow">↗</span></span></div> 
-          <div class="card-desc">Most Vintage Windows Vista Experience Website Found (not phone/mobile friendly)</div>  
-        </a> 
-       <a class="card" href="https://frutigeraeroarchive.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=frutigeraeroarchive.org" alt="" loading="lazy" onerror="this.style.display='none'">Frutiger Aero Archive <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Aero Glass Archive Website</div>
-        </a>
-      <a class="card" href="https://dimden.dev/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=dimden.dev" alt="" loading="lazy" onerror="this.style.display='none'">Dimden <span class="arrow">↗</span></span></div>
-          <div class="card-desc">>Developer, creator of the OldTwitter extension And A cool Looking Website</div>
-        </a>
-        <a class="card" href="https://nohello.net/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=nohello.net" alt="" loading="lazy" onerror="this.style.display='none'">NoHello <span class="arrow">↗</span></span></div>
-          <div class="card-desc">A website that blocks all the annoying "Hello" messages in your inbox</div>
-        </a>
-         <a class="card" href="https://pimtron.dev/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=pimtron.dev" alt="" loading="lazy" onerror="this.style.display='none'">Pimtron <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Provides About "The Right of Ownership"</div>
-        </a>
-        <a class="card" href="https://unwiredo.com/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=unwiredo.com" alt="" loading="lazy" onerror="this.style.display='none'">Unwiredo <span class="arrow">↗</span></span></div>
-          <div class="card-desc">A website that provides information about technology and gadgets </div>
-        </a> 
-        <a class="card" href="https://rice.place/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=rice.place" alt="" loading="lazy" onerror="this.style.display='none'">Rice Place <span class="arrow">↗</span></span></div>
-          <div class="card-desc">A Cool Website for rice lovers!!!</div>
-        </a>
-        <a class="card" href="https://k3nji.qzz.io/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=k3nji.qzz.io" alt="" loading="lazy" onerror="this.style.display='none'">k3nji's Website<span class="arrow">↗</span></span></div>
-          <div class="card-desc">Not A Single Word</div>
-        </a>   
-      </div>
-    </section>
-    
+<section class="card panel" id="people">
+<h2>&#10023; People &amp; Community</h2><span class="count">People Worth Following</span>
+<div class="grid">
+<a class="link" href="https://daniel.micay.dev/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=daniel.micay.dev" alt="" loading="lazy" onerror="this.style.display='none'">Daniel Micay &#8599;</b><span>Security researcher, founder of GrapheneOS</span></a>
+<a class="link" href="https://ni5arga.com" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=ni5arga.com" alt="" loading="lazy" onerror="this.style.display='none'">ni5arga &#8599;</b><span>Software engineer, hacker, security researcher</span></a>
+<a class="link" href="https://xn--gckvb8fzb.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=xn--gckvb8fzb.com" alt="" loading="lazy" onerror="this.style.display='none'">マリウス &#8599;</b><span>Well-known journalist</span></a>
+<a class="link" href="https://yearofthelinuxdesktop.net/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=yearofthelinuxdesktop.net" alt="" loading="lazy" onerror="this.style.display='none'">Year Of Linux Desktop &#8599;</b><span>Comprehensive GNU/Linux overview for beginners</span></a>
+<a class="link" href="https://christitus.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=christitus.com" alt="" loading="lazy" onerror="this.style.display='none'">Christitus &#8599;</b><span>Technology and Programming Blogs</span></a>
 
-    <!-- Useful Stuff -->
-    <section class="category" id="software">
-      <div class="cat-head"> 
-        <h2><i><s>✧ Useful Stuff</s></i></h2>
-      </div>
-
-    <!-- Privacy -->
-        <h3>1. Privacy</h3> 
-        <span class="cat-count">Main Android/Linux Based Privacy Tools/Softwares/Apps (Zero stealing data)</span>
-      
-      <div class="grid">
-        <a class="card" href="https://f-droid.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=f-droid.org" alt="" loading="lazy" onerror="this.style.display='none'">F-Droid <span class="arrow">↗</span></span></div>
-          <div class="card-desc">FOSS App Store for Android</div>
-        </a>
-        <a class="card" href="https://revanced.app/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=revanced.app" alt="" loading="lazy" onerror="this.style.display='none'">Revanced <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Enhanced version of popular apps with additional features</div>
-        </a>
-        <a class="card" href="https://microg.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=microg.org" alt="" loading="lazy" onerror="this.style.display='none'">MicroG <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Open-source implementation of Google Play Services (still uses google services, Sadly)</div>
-        </a>
-        <a class="card" href="https://github.com/InfinityLoop1308/PipePipe" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=github.com" alt="" loading="lazy" onerror="this.style.display='none'">PipePipe <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Open-Source YouTube Client</div>
-        </a>
-        <a class="card" href="https://github.com/Teskann/QuaX" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=github.com" alt="" loading="lazy" onerror="this.style.display='none'">QuaX <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Open-Source Twitter/X Client</div>
-        </a>
-        <a class="card" href="https://ironfoxoss.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=ironfoxoss.org" alt="" loading="lazy" onerror="this.style.display='none'">IronFox <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Hardened Firefox for Android</div>
-        </a>
-       <a class="card" href="https://freetubeapp.io/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=freetubeapp.io" alt="" loading="lazy" onerror="this.style.display='none'">FreeTube<span class="arrow">↗</span></span></div>
-          <div class="card-desc">Privacy-focused YouTube client for desktop</div>
-        </a>
-        <a class="card" href="https://www.wireguard.com/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=wireguard.com" alt="" loading="lazy" onerror="this.style.display='none'">WireGuard <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Modern VPN protocol</div>
-           </a>
-        <a class="card" href="https://mullvad.net/en" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=mullvad.net" alt="" loading="lazy" onerror="this.style.display='none'">Mullvad VPN <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Privacy-focused VPN service</div>
-        </a>  
-        <a class="card" href="https://signal.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=signal.org" alt="" loading="lazy" onerror="this.style.display='none'">Signal <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Privacy-focused messaging app</div>
-        </a>  
-      </div>
-    </section>
-
-    <!-- Music Softwares/Tools -->
-    <section class="category" id="music">
-      <div class="cat-head">
-        </div>
-        <h3>2. Music Softwares/Tools</h3>
-        <span class="cat-count">Music Players &amp; Tools</span> 
-
-      <div class="grid">
-        <a class="card" href="https://www.clementine-player.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=clementine-player.org" alt="" loading="lazy" onerror="this.style.display='none'">Clementine-player<span class="arrow">↗</span></span></div>
-          <div class="card-desc">Music player for Windows/Linux</div>
-        </a>
-        <a class="card" href="https://play.google.com/store/apps/details?id=in.krosbits.musicolet&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=play.google.com" alt="" loading="lazy" onerror="this.style.display='none'">Musicolet<span class="arrow">↗</span></span></div>
-          <div class="card-desc">Music player for Android, simple to use and VLC type of music player &lt;3</div>
-        </a>
-        <a class="card" href="https://spicetify.app/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=spicetify.app" alt="" loading="lazy" onerror="this.style.display='none'">Spicetify<span class="arrow">↗</span></span></div>
-          <div class="card-desc">The ultimate Spotify customization toolkit</div>
-        </a>
-        <a class="card" href="https://github.com/MetrolistGroup/Metrolist" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=github.com" alt="" loading="lazy" onerror="this.style.display='none'">Metrolist <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Open-Source/Privacy Based Music Player</div>
-        </a>  
-
-      </div>
-    </section> 
+</div>
+</section>
 
 
-
-        <!-- Useful Stuff -->
-    <section class="category" id="software">
-      <div class="cat-head">  
-      </div>
-      <h3>3. For Daily Use</h3>
-      <span class="cat-count"><i>Great Use</i></span>
-
-          <div class="grid">
-        <a class="card" href="https://www.fedoraproject.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=fedoraproject.org" alt="" loading="lazy" onerror="this.style.display='none'">Fedora Linux <span class="arrow">↗</span></span></div>
-          <div class="card-desc">It's Linux Distro. Really stable, and KDE is the best choice for me but i might switch to xfce</div>
-        </a>
-        <a class="card" href="https://lineageos.org/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=lineageos.org" alt="" loading="lazy" onerror="this.style.display='none'">LineageOS <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Custom ROM for Low-End Android devices</div>
-        </a>
-        <a class="card" href="https://brave.com/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=brave.com" alt="" loading="lazy" onerror="this.style.display='none'">Brave<span class="arrow">↗</span></span></div>
-          <div class="card-desc">Great Browser for desktop</div>
-        </a>
-        <a class="card" href="https://protonvpn.com/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=protonvpn.com" alt="" loading="lazy" onerror="this.style.display='none'">ProtonVPN <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Free VPN for emergency purposes</div>
-        </a>
-        <a class="card" href="https://www.videolan.org/vlc/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=videolan.org" alt="" loading="lazy" onerror="this.style.display='none'">VLC Media Player<span class="arrow">↗</span></span></div>
-          <div class="card-desc">Media player for Windows/Linux/Android</div>
-        </a>
-        <a class="card" href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver&hl=en_IN" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=play.google.com" alt="" loading="lazy" onerror="this.style.display='none'">ZArchiver<span class="arrow">↗</span></span></div>
-          <div class="card-desc">Best File archiver for Android (it's been 5-7 years using it &lt;3)</div>
-        </a> 
-      </div>
-    </section>
+<section class="card panel" id="wiki">
+<h2>&#10023; Wiki &amp; Guides</h2><span class="count">Useful Resources To Find</span>
+<div class="grid">
+<a class="link" href="https://www.wikipedia.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.wikipedia.org" alt="" loading="lazy" onerror="this.style.display='none'">Wikipedia &#8599;</b><span>Everything what you need to know!</span></a>
+<a class="link" href="https://fmhy.xyz/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=fmhy.xyz" alt="" loading="lazy" onerror="this.style.display='none'">FMHY &#8599;</b><span>Community-maintained megawiki</span></a>
+<a class="link" href="https://wispydocs.pages.dev/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=wispydocs.pages.dev" alt="" loading="lazy" onerror="this.style.display='none'">Wispy Docs &#8599;</b><span>Simple guides</span></a>
+<a class="link" href="https://eylenburg.github.io/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=eylenburg.github.io" alt="" loading="lazy" onerror="this.style.display='none'">Eylenburg &#8599;</b><span>Tech website</span></a>
+<a class="link" href="https://anonymousplanet.net/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=anonymousplanet.net" alt="" loading="lazy" onerror="this.style.display='none'">The Hitchhiker's Guide &#8599;</b><span>Privacy and anonymity guide</span></a>
+<a class="link" href="https://guardianproject.info/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=guardianproject.info" alt="" loading="lazy" onerror="this.style.display='none'">Guardian Project &#8599;</b><span>Privacy-focused apps for Android</span></a>
+<a class="link" href="https://www.privacytools.io/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.privacytools.io" alt="" loading="lazy" onerror="this.style.display='none'">PrivacyTools.io &#8599;</b><span>Privacy-focused resources and tools</span></a>
+<a class="link" href="https://awesome-privacy.xyz/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=awesome-privacy.xyz" alt="" loading="lazy" onerror="this.style.display='none'">Awesome Privacy &#8599;</b><span>Privacy-focused resources and tools</span></a>
+</div>
+</section>
 
 
+<section class="card panel" id="websites">
+<h2>&#10023; Websites I Like</h2><span class="count">Cool Websites</span>
+<div class="grid">
+<a class="link" href="https://amdkits.me/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=amdkits.me" alt="" loading="lazy" onerror="this.style.display='none'">AMD Kits &#8599;</b><span>I recently Found this on Twiiter/X and It looks great</span></a>
+<a class="link" href="https://www.gmkonan.dev/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.gmkonan.dev" alt="" loading="lazy" onerror="this.style.display='none'">GMKonan &#8599;</b><span>a 24 year old brazilian who writes software for a living. (Internet Rabbit Hole Expert) </span></a>
+<a class="link" href="https://wencesbyte.net/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=wencesbyte.net" alt="" loading="lazy" onerror="this.style.display='none'">Wencesbyte &#8599;</b><span>Most Vintage Windows Vista Experience Website Found (not phone/mobile friendly)</span></a>
+<a class="link" href="https://frutigeraeroarchive.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=frutigeraeroarchive.org" alt="" loading="lazy" onerror="this.style.display='none'">Frutiger Aero Archive &#8599;</b><span>Aero Glass Archive Website</span></a>
+<a class="link" href="https://dimden.dev/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=dimden.dev" alt="" loading="lazy" onerror="this.style.display='none'">Dimden &#8599;</b><span>Developer, creator of the OldTwitter extension And A cool Looking Website</span></a>
+<a class="link" href="https://nohello.net/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=nohello.net" alt="" loading="lazy" onerror="this.style.display='none'">NoHello &#8599;</b><span>A website that blocks all the annoying "Hello" messages in your inbox</span></a>
+<a class="link" href="https://pimtron.dev/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=pimtron.dev" alt="" loading="lazy" onerror="this.style.display='none'">Pimtron &#8599;</b><span>Provides About "The Right of Ownership"</span></a>
+<a class="link" href="https://unwiredo.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=unwiredo.com" alt="" loading="lazy" onerror="this.style.display='none'">Unwiredo &#8599;</b><span>A website that provides information about technology and gadgets</span></a>
+<a class="link" href="https://rice.place/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=rice.place" alt="" loading="lazy" onerror="this.style.display='none'">Rice Place &#8599;</b><span>A Cool Website for rice lovers!!!</span></a>
+<a class="link" href="https://k3nji.qzz.io/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=k3nji.qzz.io" alt="" loading="lazy" onerror="this.style.display='none'">k3nji's Website &#8599;</b><span>Not A Single Word</span></a>
+</div>
+</section>
 
-    <!-- GAMES -->
-    <section class="category" id="games">
-      <div class="cat-head">
-        <h2>✧ Games I Love</h2>
-      </div>
-      <div class="grid">
-        <a class="card" href="https://www.minecraft.net" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=minecraft.net" alt="" loading="lazy" onerror="this.style.display='none'">Minecraft <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Sandbox game, peaceful</div>
-        </a>
-        <a class="card" href="https://deltarune.com/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=deltarune.com" alt="" loading="lazy" onerror="this.style.display='none'">Deltarune <span class="arrow">↗</span></span></div>
-          <div class="card-desc">RPG, humourous game. With Cool SoundTracks</div>
-        </a>
-        <a class="card" href="https://www.undertale.com/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=undertale.com" alt="" loading="lazy" onerror="this.style.display='none'">Undertale <span class="arrow">↗</span></span></div>
-          <div class="card-desc">Indie-Game Made By Toby Fox - With Cool SoundTracks</div>
-        </a>
-        <a class="card" href="https://www.virustotal.com/" target="_blank" rel="noopener noreferrer">
-          <div class="card-top"><span class="card-title"><img class="card-icon" src="https://www.google.com/s2/favicons?sz=64&domain=virustotal.com" alt="" loading="lazy" onerror="this.style.display='none'">VirusTotal <span class="arrow">↗</span></span></div>
-          <div class="card-desc">One Of The Best File analysis & scanning And Even Website scanner</div>
-        </a>
-      </div>
-    </section>
 
-    <!-- ELSEWHERE -->
-    <section class="category" id="elsewhere">
-      <div class="cat-head">
-        <h2>✧ Elsewhere</h2>
-        <span class="cat-count">Do not find me</span>
-      </div>
-      <div class="social-row">
-        <a class="social-card" href="https://twitter.com/kekowashere" target="_blank" rel="noopener noreferrer">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=x.com" alt="" loading="lazy" onerror="this.style.display='none'">
-          <span class="handle">Twitter / X<small>@kekowashere</small></span>
-        </a>
-        <a class="social-card" href="https://github.com/kekobade" target="_blank" rel="noopener noreferrer">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=github.com" alt="" loading="lazy" onerror="this.style.display='none'">
-          <span class="handle">GitHub<small>@kekobade</small></span>
-        </a>
-      </div>
-    </section>
+<section class="card panel" id="useful">
+<h2>&#10023; Useful Stuff</h2>
+
+<h3>1. Privacy</h3><span class="count">Main Android/Linux Based Privacy Tools/Softwares/Apps (Zero stealing data)</span>
+<div class="grid">
+<a class="link" href="https://f-droid.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=f-droid.org" alt="" loading="lazy" onerror="this.style.display='none'">F-Droid &#8599;</b><span>FOSS App Store for Android</span></a>
+<a class="link" href="https://revanced.app/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=revanced.app" alt="" loading="lazy" onerror="this.style.display='none'">Revanced &#8599;</b><span>Enhanced version of popular apps with additional features</span></a>
+<a class="link" href="https://microg.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=microg.org" alt="" loading="lazy" onerror="this.style.display='none'">MicroG &#8599;</b><span>Open-source implementation of Google Play Services (still uses google services, Sadly)</span></a>
+<a class="link" href="https://github.com/InfinityLoop1308/PipePipe" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=github.com" alt="" loading="lazy" onerror="this.style.display='none'">PipePipe &#8599;</b><span>Open-Source YouTube Client</span></a>
+<a class="link" href="https://github.com/Teskann/QuaX" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=github.com" alt="" loading="lazy" onerror="this.style.display='none'">QuaX &#8599;</b><span>Open-Source Twitter/X Client</span></a>
+<a class="link" href="https://ironfoxoss.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=ironfoxoss.org" alt="" loading="lazy" onerror="this.style.display='none'">IronFox &#8599;</b><span>Hardened Firefox for Android</span></a>
+<a class="link" href="https://freetubeapp.io/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=freetubeapp.io" alt="" loading="lazy" onerror="this.style.display='none'">FreeTube &#8599;</b><span>Privacy-focused YouTube client for desktop</span></a>
+<a class="link" href="https://www.wireguard.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.wireguard.com" alt="" loading="lazy" onerror="this.style.display='none'">WireGuard &#8599;</b><span>Modern VPN protocol</span></a>
+<a class="link" href="https://mullvad.net/en" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=mullvad.net" alt="" loading="lazy" onerror="this.style.display='none'">Mullvad VPN &#8599;</b><span>Privacy-focused VPN service</span></a>
+<a class="link" href="https://signal.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=signal.org" alt="" loading="lazy" onerror="this.style.display='none'">Signal &#8599;</b><span>Privacy-focused messaging app</span></a>
+</div>
+
+<h3>2. Music Softwares/Tools</h3><span class="count">Music Players &amp; Tools</span>
+<div class="grid">
+<a class="link" href="https://www.strawberrymusicplayer.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.strawberrymusicplayer.org/" alt="" loading="lazy" onerror="this.style.display='none'">Clementine-player &#8599;</b><span>Music player for Windows/Linux</span></a>
+<a class="link" href="https://play.google.com/store/apps/details?id=in.krosbits.musicolet&amp;pcampaignid=web_share" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=play.google.com" alt="" loading="lazy" onerror="this.style.display='none'">Musicolet &#8599;</b><span>Music player for Android, simple to use and VLC type of music player &lt;3</span></a>
+<a class="link" href="https://spicetify.app/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=spicetify.app" alt="" loading="lazy" onerror="this.style.display='none'">Spicetify &#8599;</b><span>The ultimate Spotify customization toolkit</span></a>
+<a class="link" href="https://github.com/MetrolistGroup/Metrolist" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=github.com" alt="" loading="lazy" onerror="this.style.display='none'">Metrolist &#8599;</b><span>Open-Source/Privacy Based Music Player</span></a>
+</div>
+
+<h3>3. For Daily Use</h3><span class="count">Great Use</span>
+<div class="grid">
+<a class="link" href="https://www.fedoraproject.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.fedoraproject.org" alt="" loading="lazy" onerror="this.style.display='none'">Fedora Linux &#8599;</b><span>It's Linux Distro. Really stable, and KDE is the best choice for me but i might switch to xfce</span></a>
+<a class="link" href="https://lineageos.org/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=lineageos.org" alt="" loading="lazy" onerror="this.style.display='none'">LineageOS &#8599;</b><span>Custom ROM for Low-End Android devices</span></a>
+<a class="link" href="https://brave.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=brave.com" alt="" loading="lazy" onerror="this.style.display='none'">Brave &#8599;</b><span>Great Browser for desktop</span></a>
+<a class="link" href="https://www.firefox.com/en-US/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.firefox.com" alt="" loading="lazy" onerror="this.style.display='none'">Firefox &#8599;</b><span>Privacy-focused web browser (specially for Linux)</span></a>
+<a class="link" href="https://protonvpn.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=protonvpn.com" alt="" loading="lazy" onerror="this.style.display='none'">ProtonVPN &#8599;</b><span>Free VPN for emergency purposes</span></a>
+<a class="link" href="https://www.videolan.org/vlc/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.videolan.org" alt="" loading="lazy" onerror="this.style.display='none'">VLC Media Player &#8599;</b><span>Media player for Windows/Linux/Android</span></a>
+<a class="link" href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver&amp;hl=en_IN" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=play.google.com" alt="" loading="lazy" onerror="this.style.display='none'">ZArchiver &#8599;</b><span>Best File archiver for Android (it's been 5-7 years using it &lt;3)</span></a>
+<a class="link" href="https://getartcraft.com/apps" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=getartcraft.com" alt="" loading="lazy" onerror="this.style.display='none'">ArtCraft Apps &#8599;</b><span>Collection of creative apps for artists (Vibe-Coded Softwares from Zero)</span></a>
+</div>
+</section>
+
+
+<section class="card panel" id="games">
+<h2>&#10023; Games I Love</h2>
+<div class="grid">
+<a class="link" href="https://www.minecraft.net" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.minecraft.net" alt="" loading="lazy" onerror="this.style.display='none'">Minecraft &#8599;</b><span>Sandbox game, peaceful (I am retired btw on this game after 5-7 years of gameplay) </span></a>
+<a class="link" href="https://deltarune.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=deltarune.com" alt="" loading="lazy" onerror="this.style.display='none'">Deltarune &#8599;</b><span>RPG, humourous game. With Cool SoundTracks</span></a>
+<a class="link" href="https://www.undertale.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.undertale.com" alt="" loading="lazy" onerror="this.style.display='none'">Undertale &#8599;</b><span>Indie-Game Made By Toby Fox - With Cool SoundTracks</span></a>
+<a class="link" href="https://osu.ppy.sh/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=osu.ppy.sh" alt="" loading="lazy" onerror="this.style.display='none'">osu! &#8599;</b><span> rhythm game / See you next time...</span></a>
+<a class="link" href="https://www.omori-game.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.omori-game.com" alt="" loading="lazy" onerror="this.style.display='none'">Omori &#8599;</b><span>Psychological horror RPG</span></a>
+<a class="link" href="https://www.virustotal.com/" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=www.virustotal.com" alt="" loading="lazy" onerror="this.style.display='none'">VirusTotal &#8599;</b><span>One Of The Best File analysis &amp; scanning And Even Website scanner</span></a>
+</div>
+</section>
+
+
+<section class="card panel" id="elsewhere">
+<h2>&#10023; Elsewhere</h2><span class="count">Do not find me</span>
+<div class="grid">
+<a class="link" href="https://twitter.com/kekowashere" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=x.com" alt="" onerror="this.style.display='none'">Twitter / X &#8599;</b><span>@kekowashere</span></a>
+<a class="link" href="https://github.com/kekobade" target="_blank" rel="noopener noreferrer"><b><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=github.com" alt="" onerror="this.style.display='none'">GitHub &#8599;</b><span>@kekobade</span></a>
+</div>
+</section>
+</main>
 
 
 <footer>
- ✧ Note For Nerds: Every link on this page opens in a new tab (target="_blank"). Backup of <a href="https://kekobade.github.io/keko/" target="_blank" rel="noopener noreferrer">✧ Keko's original page ✧</a>.
- <p>✧ Last Updated Website: 02.10.2026 </p>
+  &#10023; Note For Nerds: Every link on this page opens in a new tab (target="_blank"). 
+  <br>
+  <br>
+  &#10023; Last Updated Website: 02.10.2026
 </footer>
 
-<button class="theme-toggle" aria-label="Toggle theme">
-  <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="5"/>
-    <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-    <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-  </svg>
-  <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-  </svg>
-</button>
 
-</div>
+<script id="fs" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+uniform vec2 r, m;       // resolution, smoothed mouse (pixels)
+uniform float t;         // seconds
+uniform float k;         // 0 = light theme, 1 = dark theme
+out vec4 o;
+
+void main(){
+  vec2 p = (gl_FragCoord.xy*2. - r)/r.y;
+  vec2 q = (m*2. - r)/r.y;
+
+  // turbulence: layered sine warp, each octave finer and weaker
+  vec2 v = p*1.4 + q*.35;
+  for(float i=1.; i<10.; i++)
+    v += .7*sin(v.yx*i + t*.7 + i*.5)/i;
+
+  float f = length(v);
+  float glow = .03/abs(sin(f*2. - t) + 1e-4);                 // thin bright ribbons
+  vec3 rib = tanh(vec3(.15,.4,1.)*glow*.6*(.7+.3*sin(f*3.-t))); // blue ribbon strength
+
+  vec3 dark  = vec3(.02,.04,.10) + rib*vec3(.5,.8,1.);        // glowing on navy
+  vec3 light = vec3(.86,.89,.94) - rib*vec3(.75,.55,.25)*.6;  // ink-blue on pale blue-grey
+  vec3 col = mix(light, dark, k);
+
+  col *= 1. - .2*dot(p,p)*mix(.4,1.,k);                        // vignette
+  col += (fract(sin(dot(gl_FragCoord.xy, vec2(12.9898,78.233)))*43758.5453) - .5)*.02; // grain
+  o = vec4(clamp(col,0.,1.), 1);
+}
+</script>
+
+<script src="theme.js"></script>
+
 </body>
 </html>
